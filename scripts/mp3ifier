@@ -1,0 +1,29 @@
+#!/bin/bash
+while [[ $# != 0 ]]; do
+
+MEDIADIR="/home/theophile/Desktop/Music/supplement/media"
+MIDIDIR="${MEDIADIR}/MIDI/"
+MP3DIR="${MEDIADIR}/MP3/"
+INFILE=`basename "$1"`
+PWD=`pwd`
+BASEDIR=`basename $PWD`
+base=${INFILE%%.*}
+ext=${INFILE#*.}
+
+MIDI="${MIDIDIR}${BASEDIR}/${base}.midi"
+TITLE=$(grep -m 1 Title -n "$1" | sed 's/[^\"]*\"\([^\"]*\)\"[^\"]*/\1/g' | sed -re 's/^.+\\markup\{//' | sed 's/\\smallCaps{Lord/LORD/g' | sed -re 's/(.+)}.+$/\1/' | sed 's/}//g')
+COMPOSER=`grep Composer -n "$1" | sed 's/[^\"]*\"\([^\"]*\)\"[^\"]*/\1/g'`
+ARRANGER=`grep Arranger -n "$1" | sed 's/[^\"]*\"\([^\"]*\)\"[^\"]*/\1/g'`
+if [[ "$ARRANGER" != "" ]]; then
+	COMPOSER2="/${ARRANGER}"
+   else
+	COMPOSER2=""
+fi
+
+if [ ! -d "${MP3DIR}${BASEDIR}/" ]; then
+   mkdir "${MP3DIR}${BASEDIR}/"
+fi
+
+timidity "$MIDI" -Ow -o - | lame --preset standard --tt "$TITLE" --ta "Immanuel Presbyterian Church" --tl "IPC Hymnal Project" --tc "Music: ${COMPOSER}${COMPOSER2}" - "${MP3DIR}${BASEDIR}/${base}.mp3"
+shift
+done

@@ -1,0 +1,10 @@
+#!/bin/bash
+basename=$(basename "$1" '.lytex')
+lilypond-book -I /home/theophile/Desktop/Music/supplement/includes/piano/ --pdf --output=Piano "$1"
+cd Piano
+pdflatex $basename
+pdflatex $basename
+makeindex -s ../songs.ist ${basename}.idx
+pdflatex $basename
+pdflatex $basename
+pdftk A=../../images/cover-pianist.pdf B=${basename}.pdf cat A1 B2-end output ../${basename}.pdf

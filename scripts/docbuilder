@@ -1,0 +1,23 @@
+#!/bin/bash
+DIR=`pwd`
+FILE=`basename "$DIR"`
+echo "%% $FILE" >> ${FILE}.txt
+while [[ $# != 0 ]]; do
+TITLE=`grep Title -n "$1" | sed 's/[^\"]*\"\([^\"]*\)\"[^\"]*/\1/g' | sed -re 's/^.+\\markup\{//' | sed 's/smallCaps/textsc/g' | sed -re 's/(.+)}.+$/\1/'`
+TUNE=`grep Tune -n "$1" | sed 's/[^\"]*\"\([^\"]*\)\"[^\"]*/\1/g'`
+METER=`grep Meter -n "$1" | sed 's/[^\"]*\"\([^\"]*\)\"[^\"]*/\1/g'`
+COMPOSER=`grep Composer -n "$1" | sed 's/[^\"]*\"\([^\"]*\)\"[^\"]*/\1/g'`
+WRITER=`grep Writer -n "$1" | sed 's/[^\"]*\"\([^\"]*\)\"[^\"]*/\1/g'`
+TRANSLATOR=`grep Translator -n "$1" | sed 's/[^\"]*\"\([^\"]*\)\"[^\"]*/\1/g'`
+ARRANGER=`grep Arranger -n "$1" | sed 's/[^\"]*\"\([^\"]*\)\"[^\"]*/\1/g'`
+
+echo "" >> ${FILE}.txt
+echo "\songsection{"$TITLE"}" >> ${FILE}.txt
+echo "\lilypondfile[staffsize=15.20,line-width=15.28\cm]{`pwd`/"$1"}" >> ${FILE}.txt
+echo "\newline" >> ${FILE}.txt
+echo "\songinfo{"$WRITER"}{"${TUNE}${METER}"}{"$COMPOSER"}{"$TRANSLATOR"}{}{"$ARRANGER"}" >> ${FILE}.txt
+echo "\newpage" >> ${FILE}.txt
+echo "" >> ${FILE}.txt
+shift
+done
+mv "${FILE}.txt" ~/Desktop/Music/supplement/book/docs/

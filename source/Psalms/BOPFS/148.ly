@@ -1,0 +1,159 @@
+\version "2.10.29"
+
+\paper
+{
+        page-count = 1
+}
+
+Title = \markup{ From Heav'n O Praise the \smallCaps "Lord"}
+
+Writer = "Based on Psalm 148"
+
+Translator = "The Book of Psalms for Singing, 1998 (Psalm 148)"
+
+Composer = "Horatio R. Palmer, 1834-1907"
+
+Arranger = ""
+
+Tune = "ST. CATHERINE'S"
+
+Meter = " 6.6.6.6.4.4.4.4."
+
+\include "header.ly"
+\header {       title = \Title
+                subtitle = "Psalm 148" }
+
+
+global = {
+	\time 2/2
+	\key c \major
+	\tempo 2 = 80
+	\autoBeamOff
+}
+
+soprano = {
+	\partial 4
+	g'4 g' g' e' c' g'2. e'4 d' e' f' g' e'2.
+	g'4 g' e' d' c' a'2. g'4 g' g' g' fis' g'2.
+	g'4 b'2 c'' d''2. g'4 b'2 c'' d''2.
+	g'4 e'' d'' c'' g' a' b' c'' d'' c''2 b' c''2.
+ 	\bar "|."
+}
+
+alto = {
+	g'4 g' g' e' c' g'2. c'4 b c' d' e' c'2.
+	g'4 g' e' d' c' f'2. c'4 d' e' d' c' b2.
+	g'4 f'2 e' f'2. g'4 f'2 e' f'2.
+	g'4 g' f' e' c' f' f' e' a'8[ f'] e'2 d'4 (f') e'2.
+}
+
+tenor = {
+	g4 g g e c g1~ g~ g2.
+	g4 g e d c c'2. c'4 b c' b a g2.
+	g4 d'2 c' b2. g4 d'2 c' b2.
+	g4 c' b c' c' c' d' c' a g2 g g2.
+}
+
+bass = {
+	g4 g g e c g2. c4 g, g, g, g, c2.
+	g4 g e d c f2. e4 d c d d g,2.
+	r4 r4 g g g g2. r4 r4 g g g g2.
+	g4 c' g a e f d e f g2 g, c2.
+}
+
+skipFour = \repeat unfold 5 { \skip 4 }
+
+sopWords = \lyricmode
+{
+	From heav'n O praise the \markup { \smallCaps "Lord;" } Ye heights, \markup { \smallCaps "His" } glo -- ry raise.
+	All an -- gels, praise ac -- cord; Let all His host give praise.
+	Praise Him on high, Sun, moon, and star,
+	Sun moon, and star, Ye heav'ns a -- far, And cloud -- y sky.
+}
+sopWordsTwo = \lyricmode
+{
+	Yea, let them glo -- rious make Je -- ho -- vah's match -- less name;
+	For when the word He spake They in -- to be -- ing came.
+	And from that place Where fixed they be,
+	Where fixed they be, By His de -- cree They can -- not pass.
+}
+sopWordsThree = \lyricmode
+{
+	\override LyricText #'font-shape = #'italic
+ 	From earth O praise the \markup { \smallCaps "Lord," } Ye deeps and all be -- low;
+	Wild winds that do His word, Ye clouds, fire, hail, and snow;
+	Ye moun -- tains high, ye ce -- dars tall,
+	Ye ce -- dars tall, Beasts great and small, And birds that fly.
+}
+sopWordsFour = \lyricmode
+{
+ 	Let all the peo -- ple praise, And kings of ev -- ery land;
+	Let all their voic -- es raise Who judge and give com -- mand.
+	By young and old, By maid and youth,
+	By maid and youth, His name in truth Should be ex -- tolled.
+}
+sopWordsFive = \lyricmode
+{
+ 	Je -- ho -- vah's name be praised A -- bove the earth and sky.
+	For He His saints has raised And set their power on high.
+	Him praise ac -- cord, O Is -- rael's race,
+	O Is -- rael's race, Near to His grace. Praise ye the \markup { \smallCaps "Lord!" }
+}
+sopWordsSix = \lyricmode
+{
+ 	\skipFour
+	\markup { \smallCaps "Lord;" } __ ""
+}
+
+sopWordsSeven = \lyricmode
+{
+ 
+}
+
+sopWordsEight = \lyricmode
+{
+ 
+}
+
+musicScore = \context StaffGroup <<
+   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
+	 	s4 s1 s s s s
+		f2. c4:/e g:/d c g:/d d g1
+		g2:7 c:/g g1.:7 c2:/g g1:7
+		c4 g a:m e:m f g:7/d a:m/e f:6 c2:/g g:7 c2.
+		}
+	\new Lyrics = "aboveOne" { s4 }
+    \context Staff = "upper" <<
+
+      \clef treble
+      \context Voice = "one" { \global \voiceOne \soprano }
+      \context Voice = "two" { \global \voiceTwo \alto }
+    >>
+	%\context Lyrics = "aboveOne" \lyricsto "one" \sopWordsFour
+	\lyricsto "one" \new Lyrics { \set stanza = "1." \sopWords }
+	\lyricsto "one" \new Lyrics { \set stanza = "2." \sopWordsTwo }
+	\lyricsto "one" \new Lyrics { \set stanza = "3." \sopWordsThree }
+	\lyricsto "one" \new Lyrics { \set stanza = "4." \sopWordsFour }
+	\lyricsto "one" \new Lyrics { \set stanza = "5." \sopWordsFive }
+	%\lyricsto "one" \new Lyrics { \set stanza = "6." \sopWordsSix }
+	%\lyricsto "one" \new Lyrics { \set stanza = "7." \sopWordsSeven }
+	%\lyricsto "one" \new Lyrics { \set stanza = "8." \sopWordsEight }
+
+	\new Lyrics = "aboveTwo" { s4 }
+    \context Staff = "lower" <<
+      \clef bass
+      \context Voice = "three" { \global \voiceThree \tenor }
+      \context Voice = "four" { \global \voiceFour \bass }
+    >>
+
+	%\context Lyrics = "aboveTwo" \lyricsto "three" \sopWordsThree
+	\new Lyrics \with { alignAboveContext = #"lower" } \lyricsto "three" { \sopWordsSix }
+	%\new Lyrics \with { alignAboveContext = #"lower" } \lyricsto "three" { \sopWordsFour }
+	%\context Lyrics = "aboveOne" \lyricsto "three" \sopWordsFour
+	%\lyricsto "four" \new Lyrics { \sopWordsFive }
+	%\lyricsto "four" \new Lyrics { \sopWordsSix }
+	
+  >>
+	
+\include "standard-layout.ly"
+\include "tag.ly"

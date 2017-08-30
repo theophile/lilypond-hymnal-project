@@ -1,0 +1,28 @@
+#!/bin/bash
+MEDIADIR="/home/theophile/Desktop/Music/supplement/media"
+MIDIDIR="${MEDIADIR}/MIDI/"
+PDFDIR="${MEDIADIR}/PDF/"
+
+while [[ $# != 0 ]]; do
+INFILE=`basename "$1"`
+PWD=`pwd`
+BASEDIR=`basename $PWD`
+base=${INFILE%%.*}
+ext=${INFILE#*.}
+#echo $base
+#echo $ext
+lilypond -I /home/theophile/Desktop/Music/supplement/includes/pages/ "$1"
+rm "${base}.ps"
+
+if [ ! -d "${PDFDIR}${BASEDIR}/" ]; then
+   mkdir "${PDFDIR}${BASEDIR}/"
+fi
+
+if [ ! -d "${MIDIDIR}${BASEDIR}/" ]; then
+   mkdir "${MIDIDIR}${BASEDIR}/"
+fi
+
+mv ${base}*.midi ${MIDIDIR}${BASEDIR}/
+mv ${base}*.pdf ${PDFDIR}${BASEDIR}/
+shift
+done

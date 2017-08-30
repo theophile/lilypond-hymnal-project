@@ -1,0 +1,159 @@
+\version "2.10.29"
+
+\paper
+{
+        page-count = 1
+}
+
+Title = \markup{ The \smallCaps "Lord" of Heav'n Confess}
+
+Writer = "Based on Psalm 148"
+
+Translator = "Specimens of an Improved Metrical Translation of the Psalms of David, 1840"
+
+Composer = "Horatio R. Palmer, 1834-1907"
+
+Arranger = ""
+
+Tune = "ST. CATHERINE'S"
+
+Meter = " 6.6.6.6.4.4.4.4."
+
+\include "header.ly"
+\header {       title = \Title
+                subtitle = "Psalm 148" }
+
+
+global = {
+	\time 2/2
+	\key c \major
+	\tempo 2 = 80
+	\autoBeamOff
+}
+
+soprano = {
+	\partial 4
+	g'4 g' g' e' c' g'2. e'4 d' e' f' g' e'2.
+	g'4 g' e' d' c' a'2. g'4 g' g' g' fis' g'2.
+	g'4 b'2 c'' d''2. g'4 b'2 c'' d''2.
+	g'4 e'' d'' c'' g' a' b' c'' d'' c''2 b' c''2.
+ 	\bar "|."
+}
+
+alto = {
+	g'4 g' g' e' c' g'2. c'4 b c' d' e' c'2.
+	g'4 g' e' d' c' f'2. c'4 d' e' d' c' b2.
+	g'4 f'2 e' f'2. g'4 f'2 e' f'2.
+	g'4 g' f' e' c' f' f' e' a'8[ f'] e'2 d'4 (f') e'2.
+}
+
+tenor = {
+	g4 g g e c g1~ g~ g2.
+	g4 g e d c c'2. c'4 b c' b a g2.
+	g4 d'2 c' b2. g4 d'2 c' b2.
+	g4 c' b c' c' c' d' c' a g2 g g2.
+}
+
+bass = {
+	g4 g g e c g2. c4 g, g, g, g, c2.
+	g4 g e d c f2. e4 d c d d g,2.
+	r4 r4 g g g g2. r4 r4 g g g g2.
+	g4 c' g a e f d e f g2 g, c2.
+}
+
+skipFour = \repeat unfold 4 { \skip 4 }
+
+sopWords = \lyricmode
+{
+	The \markup { \smallCaps "Lord" } of heav'n con -- fess, On high, \markup { \smallCaps "His" } glo -- ry raise.
+	Him let all an -- gels bless, Him all His ar -- mies praise.
+	Him glo -- ri -- fy, Sun, moon, and stars;
+	Sun, moon, and stars; Ye high -- er spheres, And cloud -- y sky.
+}
+sopWordsTwo = \lyricmode
+{
+	All ye from noth -- ing came, At His cre -- a -- ting word;
+	O, there -- fore, bless His name, And mag -- ni -- fy the \markup { \smallCaps "Lord." }
+	His wis -- dom hath As -- signed you all,
+	As -- signed you all, Wher -- e're you roll, Your change -- less path.
+}
+sopWordsThree = \lyricmode
+{
+	\override LyricText #'font-shape = #'italic
+ 	Praise \markup { \smallCaps "God" } on earth be -- low, Praise Him, sea -- mon -- sters, deeps,
+	Fire, hail, clouds, wind, and snow, Whom in com -- mand He keeps.
+	Praise ye His name, Hills great and small,
+	Hills great and small, Trees low and tall; Beasts wild and tame;
+}
+sopWordsFour = \lyricmode
+{
+ 	All beasts that creep or fly, Ye kings, ye vul -- gar throng,
+	Jud -- ges and prin -- ces high; Both men and maid -- ens young,
+	The young and old, Ex -- alt His name;
+	Ex -- alt His name, For much His fame Should be ex -- tolled.
+}
+sopWordsFive = \lyricmode
+{
+ 	O let \markup { \smallCaps "God's" } name be praised A -- bove both earth and sky;
+	For He His saints hath raised, And set their home on high;
+	Prasie ye the \markup { \smallCaps "Lord," } O Is -- rael's race,
+	O Is -- rael's race, Who know His grace, And hear His word.
+}
+sopWordsSix = \lyricmode
+{
+ 	\skipFour
+	con -- fess, __ ""
+}
+
+sopWordsSeven = \lyricmode
+{
+ 
+}
+
+sopWordsEight = \lyricmode
+{
+ 
+}
+
+musicScore = \context StaffGroup <<
+   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
+	 	s4 s1 s s s s
+		f2. c4:/e g:/d c g:/d d g1
+		g2:7 c:/g g1.:7 c2:/g g1:7
+		c4 g a:m e:m f g:7/d a:m/e f:6 c2:/g g:7 c2.
+		}
+	\new Lyrics = "aboveOne" { s4 }
+    \context Staff = "upper" <<
+
+      \clef treble
+      \context Voice = "one" { \global \voiceOne \soprano }
+      \context Voice = "two" { \global \voiceTwo \alto }
+    >>
+	%\context Lyrics = "aboveOne" \lyricsto "one" \sopWordsFour
+	\lyricsto "one" \new Lyrics { \set stanza = "1." \sopWords }
+	\lyricsto "one" \new Lyrics { \set stanza = "2." \sopWordsTwo }
+	\lyricsto "one" \new Lyrics { \set stanza = "3." \sopWordsThree }
+	\lyricsto "one" \new Lyrics { \set stanza = "4." \sopWordsFour }
+	\lyricsto "one" \new Lyrics { \set stanza = "5." \sopWordsFive }
+	%\lyricsto "one" \new Lyrics { \set stanza = "6." \sopWordsSix }
+	%\lyricsto "one" \new Lyrics { \set stanza = "7." \sopWordsSeven }
+	%\lyricsto "one" \new Lyrics { \set stanza = "8." \sopWordsEight }
+
+	\new Lyrics = "aboveTwo" { s4 }
+    \context Staff = "lower" <<
+      \clef bass
+      \context Voice = "three" { \global \voiceThree \tenor }
+      \context Voice = "four" { \global \voiceFour \bass }
+    >>
+
+	%\context Lyrics = "aboveTwo" \lyricsto "three" \sopWordsThree
+	\new Lyrics \with { alignAboveContext = #"lower" } \lyricsto "three" { \sopWordsSix }
+	%\new Lyrics \with { alignAboveContext = #"lower" } \lyricsto "three" { \sopWordsFour }
+	%\context Lyrics = "aboveOne" \lyricsto "three" \sopWordsFour
+	%\lyricsto "four" \new Lyrics { \sopWordsFive }
+	%\lyricsto "four" \new Lyrics { \sopWordsSix }
+	
+  >>
+	
+\include "standard-layout.ly"
+\include "tag.ly"
