@@ -115,17 +115,6 @@ sopWordsEight= \lyricmode
  
 }
 
-% modify maj9 and 6(add9)
-% Exception music is chords with markups
-chExceptionMusic = {
-  <c g>1-\markup { " (no3)" }
-}
-
-% Convert music to list and prepend to existing exceptions.
-chExceptions = #( append
-  ( sequential-music-to-chord-exceptions chExceptionMusic #t)
-  ignatzekExceptions)
-
 musicScore = \context StaffGroup <<
    \include "insertchords.ly"
   	\new Lyrics = "aboveOne" { s4 }

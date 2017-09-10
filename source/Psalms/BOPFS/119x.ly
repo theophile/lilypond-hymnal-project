@@ -33,12 +33,6 @@ global = {
 	\autoBeamOff
 }
 
-% modify open chords (no 3rd)
-% Exception music is chords with markups
-chExceptionMusic = {
-  <c g>1-\markup { " (no3)" }
-}
-
 soprano = {	
 	g'2 g'4 a' bes' a' g' g' fis'2 fis' f'!4 bes' a' g' fis'2. fis'4 g'2. 
 	\oneVoice r4 R1 \voiceOne R1 r2 r4 g'4 d'' d'' d'' d''8[ c''] a'4 a' a' a' bes' g' a' g' fis'2. fis'4 g'1 \bar "|."
@@ -70,6 +64,17 @@ bass = {
 	%g2 g4 g fis g d2. d4 bes, c d d g,2.
 	%g,4 d d d bes, f f f d g g g bes8 (g) fis4 d d2~ d2. d4 bes, c d d g,1
 }
+
+% modify open chords (no 3rd)
+% Exception music is chords with markups
+chExceptionMusic = {
+  <c g>1-\markup { " (no3)" }
+}
+
+% Convert music to list and prepend to existing exceptions.
+chExceptions = #( append
+  ( sequential-music-to-chord-exceptions chExceptionMusic #t)
+  ignatzekExceptions)
 
 thechords = \chordmode  { \set majorSevenSymbol = "maj7"
 	\set chordNameExceptions = #chExceptions
@@ -124,13 +129,6 @@ sopWordsEight= \lyricmode
 {
  
 }
-
-
-
-% Convert music to list and prepend to existing exceptions.
-chExceptions = #( append
-  ( sequential-music-to-chord-exceptions chExceptionMusic #t)
-  ignatzekExceptions)
 
 musicScore = \context StaffGroup <<
    \include "insertchords.ly"

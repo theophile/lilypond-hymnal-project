@@ -62,6 +62,17 @@ tenor = {
 bass = {
 }
 
+% modify open chords (no 3rd)
+% Exception music is chords with markups
+chExceptionMusic = {
+  <c g>1-\markup { " (no3)" }
+}
+
+% Convert music to list and prepend to existing exceptions.
+chExceptions = #( append
+  ( sequential-music-to-chord-exceptions chExceptionMusic #t)
+  ignatzekExceptions)
+
 thechords = \chordmode  { \set majorSevenSymbol = "maj7"
 	\set chordNameExceptions = #chExceptions
 	g2^3 g4:m d:m/f g:m d:m c:m bes d1 d4:m bes f ees:/g d1 g2.^3 s4 s1 s1
@@ -115,17 +126,6 @@ sopWordsEight= \lyricmode
 {
  
 }
-
-% modify maj9 and 6(add9)
-% Exception music is chords with markups
-chExceptionMusic = {
-  <c g>1-\markup { " (no3)" }
-}
-
-% Convert music to list and prepend to existing exceptions.
-chExceptions = #( append
-  ( sequential-music-to-chord-exceptions chExceptionMusic #t)
-  ignatzekExceptions)
 
 musicScore = \context StaffGroup <<
    \include "insertchords.ly"
