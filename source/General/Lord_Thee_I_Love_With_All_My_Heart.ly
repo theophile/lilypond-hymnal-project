@@ -94,6 +94,10 @@ bass = {
 	s4 ees ees d c g ees f bes,1
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+
+}
+
 sopWords = \lyricmode
 {
 	Lord, Thee I love with all my heart;
@@ -164,9 +168,7 @@ sopWordsEight= \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-	
-		}
+   \include "insertchords.ly"}
     \context Staff = "upper" <<
 
       \clef treble

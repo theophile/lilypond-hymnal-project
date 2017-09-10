@@ -33,6 +33,12 @@ global = {
 	\autoBeamOff
 }
 
+% modify open chords (no 3rd)
+% Exception music is chords with markups
+chExceptionMusic = {
+  <c g>1-\markup { " (no3)" }
+}
+
 soprano = {	
 	g'2 g'4 a' bes' a' g' g' fis'2 fis' f'!4 bes' a' g' fis'2. fis'4 g'2. 
 	\oneVoice r4 R1 \voiceOne R1 r2 r4 g'4 d'' d'' d'' d''8[ c''] a'4 a' a' a' bes' g' a' g' fis'2. fis'4 g'1 \bar "|."
@@ -63,6 +69,12 @@ bass = {
 
 	%g2 g4 g fis g d2. d4 bes, c d d g,2.
 	%g,4 d d d bes, f f f d g g g bes8 (g) fis4 d d2~ d2. d4 bes, c d d g,1
+}
+
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+	\set chordNameExceptions = #chExceptions
+	g2^3 g4:m d:m/f g:m d:m c:m bes d1 d4:m bes f ees:/g d1 g2.^3 s4 s1 s1
+	c2:m c4:m7 d:m bes2. c4:m7 d2.^3 d4:m g2:m d4:m/f g:m d1 g1^3
 }
 
 sopWords = \lyricmode
@@ -113,11 +125,7 @@ sopWordsEight= \lyricmode
  
 }
 
-% modify maj9 and 6(add9)
-% Exception music is chords with markups
-chExceptionMusic = {
-  <c g>1-\markup { " (no3)" }
-}
+
 
 % Convert music to list and prepend to existing exceptions.
 chExceptions = #( append
@@ -125,12 +133,8 @@ chExceptions = #( append
   ignatzekExceptions)
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-		\set chordNameExceptions = #chExceptions
-		g2^3 g4:m d:m/f g:m d:m c:m bes d1 d4:m bes f ees:/g d1 g2.^3 s4 s1 s1
-		c2:m c4:m7 d:m bes2. c4:m7 d2.^3 d4:m g2:m d4:m/f g:m d1 g1^3 
-		}
-	\new Lyrics = "aboveOne" { s4 }
+   \include "insertchords.ly"
+  	\new Lyrics = "aboveOne" { s4 }
     \context Staff = "upper" <<
 
       \clef treble

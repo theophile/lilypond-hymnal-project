@@ -62,6 +62,12 @@ tenor = {
 bass = {
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+	\set chordNameExceptions = #chExceptions
+	g2^3 g4:m d:m/f g:m d:m c:m bes d1 d4:m bes f ees:/g d1 g2.^3 s4 s1 s1
+	c2:m c4:m7 d:m bes2. c4:m7 d2.^3 d4:m g2:m d4:m/f g:m d1 g1^3 
+}
+
 sopWords = \lyricmode
 {
 	Be -- fore Thee let my cry come near, 
@@ -122,11 +128,7 @@ chExceptions = #( append
   ignatzekExceptions)
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-		\set chordNameExceptions = #chExceptions
-		g2^3 g4:m d:m/f g:m d:m c:m bes d1 d4:m bes f ees:/g d1 g2.^3 s4 s1 s1
-		c2:m c4:m7 d:m bes2. c4:m7 d2.^3 d4:m g2:m d4:m/f g:m d1 g1^3 
-		}
+   \include "insertchords.ly"
 	\new Lyrics = "aboveOne" { s4 }
     \context Staff = "upper" <<
 

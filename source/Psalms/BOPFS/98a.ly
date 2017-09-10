@@ -59,6 +59,12 @@ bass = {
 	d4 g a b g e2. c4 g g g g d2. d4 g (a b g c' b a) g d2 d g1
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+	g2. c4:/g g2. c4 g2:/d d2 g1 d4:7/a g d:7/fis a:7/e d1 g2. e4:m d2:/a a:7 d1
+	g2 d4:/fis d g1 c4:/g g d:7/g g d1 s1 s2.
+	c4 g1 d g4 d:7/a g:/b g c g:/b d:7/a g d2:sus4 d4 d:7 g1
+}
+
 sopWords = \lyricmode
 {
 	O sing a new __ song to the \markup { \smallCaps "Lord" }
@@ -121,13 +127,8 @@ chExceptions = #( append
   ignatzekExceptions)
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-		\set chordNameExceptions = #chExceptions
-		g2. c4:/g g2. c4 g2:/d d2 g1 d4:7/a g d:7/fis a:7/e d1 g2. e4:m d2:/a a:7 d1
-		g2 d4:/fis d g1 c4:/g g d:7/g g d1 s1 s2.
-		c4 g1 d g4 d:7/a g:/b g c g:/b d:7/a g d2:sus4 d4 d:7 g1
-		}
-	\new Lyrics = "aboveOne" { s4 }
+   \include "insertchords.ly"
+  	\new Lyrics = "aboveOne" { s4 }
     \context Staff = "upper" <<
 
       \clef treble

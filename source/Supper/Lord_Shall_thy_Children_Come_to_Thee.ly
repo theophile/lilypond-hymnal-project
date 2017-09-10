@@ -46,6 +46,10 @@ bass = {
 	d2 b,4 a, d fis d b, a,2 d b,4 d a, b, d b, a,2 g, a,4 b,8 cis d4 b, g, a, d1 d2 d4 fis a fis g g, d2 d d8[ e] fis[ gis] a4. fis8 d4 e a,2 b, a,4 d g, b, g, a, d1
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+
+}
+
 sopWords = \lyricmode
 {
 	Lord, shall Thy child -- ren come to Thee?
@@ -100,9 +104,7 @@ sopWordsEight= \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-	
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

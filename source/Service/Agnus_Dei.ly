@@ -69,6 +69,10 @@ bass = {
 	a,4 a, d e1
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+
+}
+
 sopWords = \lyricmode
 {
 	O Lamb of God, that ta -- kest a -- way the sins of the world, have mer -- cy up -- on us.
@@ -107,9 +111,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-	
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

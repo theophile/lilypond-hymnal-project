@@ -85,6 +85,10 @@ bass = {
 	g8 d4 e8 b,4 b,8 c2 e8 c b,4 c8 b, a,4 g,8 fis, e,4
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+	
+}
+
 sopWords = \lyricmode
 {
 	\set stanza = "1. "
@@ -158,11 +162,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = <<
-	\new ChordNames \chordmode
-                {
-                \set majorSevenSymbol = "maj7"
- 
-                }
+   \include "insertchords.ly
     \new Voice = "mel" { \global \melody }
 	\new Lyrics = sopranos { s1 }
         \new Lyrics = sopranosTwo { s1 }

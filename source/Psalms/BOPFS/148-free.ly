@@ -61,6 +61,13 @@ bass = {
 	g4 c' g a e f d e f g2 g, c2.
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+	s4 s1 s s s s
+	f2. c4:/e g:/d c g:/d d g1
+	g2:7 c:/g g1.:7 c2:/g g1:7
+	c4 g a:m e:m f g:7/d a:m/e f:6 c2:/g g:7 c2.
+}
+
 skipFour = \repeat unfold 4 { \skip 4 }
 
 sopWords = \lyricmode
@@ -116,12 +123,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-	 	s4 s1 s s s s
-		f2. c4:/e g:/d c g:/d d g1
-		g2:7 c:/g g1.:7 c2:/g g1:7
-		c4 g a:m e:m f g:7/d a:m/e f:6 c2:/g g:7 c2.
-		}
+   \include "insertchords.ly"
 	\new Lyrics = "aboveOne" { s4 }
     \context Staff = "upper" <<
 

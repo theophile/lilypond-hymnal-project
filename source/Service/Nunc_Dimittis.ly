@@ -140,12 +140,12 @@ bass = {
 	\time 4/4 f1 bes4 a g f s4 a bes d' g f (bes, a, g, c) <f, c>2
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+
+}
+
 musicScore = <<
-	\new ChordNames \chordmode
-                {
-                \set majorSevenSymbol = "maj7"
- 
-                }
+   \include "insertchords.ly"
     \new Voice = "mel" { \global \leader }
 
     	\new Lyrics \lyricsto mel \sopWords    

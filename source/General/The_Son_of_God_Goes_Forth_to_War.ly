@@ -57,6 +57,14 @@ bass = {
 				g8 a4 g8 fis4 fis8 g4 g8 a4 a8 g8 (fis) e d d4 e4.~ e4
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+	\partial 8
+	r2. a16:m/d d16 c8. d16:/c c8 d4 b8:m/d e4.:m c4.:maj7 d8. e16:m/d d8 e4:m
+	e8:sus4/fis e4:m e8:sus4/fis e4:m a16:m/d d16 c8. d16:/c c8 d4 b8:m/d e4.:m c4. d8 e8:m d8:/fis e4.:m
+	c4. g4 g8:/fis e8.:m d16/fis e8:m/g d4/fis d16:sus4 d16 c4:maj7 c8 d4 e8:m d4:/fis b8:m6/fis c4:/g
+	c8:maj7 a4:m e8:m d4.:9/fis g8. g16:sus4 e8:m/g d4:/a d16:sus4/a d16:/a e8.:m/g d16:/fis e8:m d4. e4.:m
+}
+
 sopWords = \lyricmode
 {
 The Son of God goes forth to war, a king -- ly crown to gain;
@@ -105,13 +113,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-		\partial 8
-			r2. a16:m/d d16 c8. d16:/c c8 d4 b8:m/d e4.:m c4.:maj7 d8. e16:m/d d8 e4:m
-			e8:sus4/fis e4:m e8:sus4/fis e4:m a16:m/d d16 c8. d16:/c c8 d4 b8:m/d e4.:m c4. d8 e8:m d8:/fis e4.:m
-			c4. g4 g8:/fis e8.:m d16/fis e8:m/g d4/fis d16:sus4 d16 c4:maj7 c8 d4 e8:m d4:/fis b8:m6/fis c4:/g
-			c8:maj7 a4:m e8:m d4.:9/fis g8. g16:sus4 e8:m/g d4:/a d16:sus4/a d16:/a e8.:m/g d16:/fis e8:m d4. e4.:m
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

@@ -58,6 +58,12 @@ bass = {
 	aes,2 aes,8[ a,] bes,2 ees4 ees8.[ (f16] g4) aes4 bes2 bes,4 ees2
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+	s4 s2. s2 ees4 s8 ees8:sus/f ees:/g ees bes4 ees2
+	f4 bes2 bes4:/d ees4 bes:/f f bes2 s4 s2
+	bes4 ees2. aes2 a4:dim ees4:/bes bes ees ees ees:/g aes:6 ees2:/bes bes4:7 ees2
+}
+
 sopWords = \lyricmode
 {
 	%Be -- fore Thee let my cry come near, 
@@ -104,24 +110,8 @@ sopWordsEight= \lyricmode
  
 }
 
-% modify maj9 and 6(add9)
-% Exception music is chords with markups
-%chExceptionMusic = {
-%  <c g>1-\markup { " (no3)" }
-%}
-
-% Convert music to list and prepend to existing exceptions.
-%chExceptions = #( append
-%  ( sequential-music-to-chord-exceptions chExceptionMusic #t)
-%  ignatzekExceptions)
-
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-		%\set chordNameExceptions = #chExceptions
-		s4 s2. s2 ees4 s8 ees8:sus/f ees:/g ees bes4 ees2
-	f4 bes2 bes4:/d ees4 bes:/f f bes2 s4 s2
-	bes4 ees2. aes2 a4:dim ees4:/bes bes ees ees ees:/g aes:6 ees2:/bes bes4:7 ees2
-		}
+   \include "insertchords.ly"
 	\new Lyrics = "aboveOne" { s4 }
     \context Staff = "upper" <<
 

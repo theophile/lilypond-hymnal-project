@@ -46,6 +46,10 @@ bass = {
 	ees4 f4. c8 des4 c8[ aes,] des4 c8[ aes,] f,4 g, aes,4. bes,8 c4 des8[ f] ees4 ees aes,
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+
+}
+
 sopWords = \lyricmode
 {
         O won -- drous type! O vis -- ion fair
@@ -103,9 +107,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-	
-		}
+   \include "insertchords.ly
     \context Staff = "upper" <<
 
       \clef treble

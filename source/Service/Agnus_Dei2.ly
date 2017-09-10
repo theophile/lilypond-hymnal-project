@@ -77,6 +77,10 @@ bass = {
 	b, a, gis, a, cis b,4 a, gis,2 fis, e, a,1 gis,2 a, fis, b, e,1.  
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+
+}
+
 sopWords = \lyricmode
 {
 	O Lamb of God, __ that ta -- kest a -- way __ the sins of the world
@@ -120,11 +124,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = <<
-		\new ChordNames \chordmode
-                {
-                \set majorSevenSymbol = "maj7"
- 
-                }
+   \include "insertchords.ly"
     \new Voice = "mel" { \global \melody }
 	\new Lyrics = sopranos { s1 }
         %\new Lyrics = sopranosTwo { s1 }

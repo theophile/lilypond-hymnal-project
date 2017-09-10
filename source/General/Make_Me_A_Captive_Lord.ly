@@ -51,6 +51,10 @@ bass = {
 	g,4 d d d bes, f f f d g g g bes8 (g) fis4 d d2~ d2. d4 bes, c d d g,1
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+
+}
+
 sopWords = \lyricmode
 {
 	Make me a cap -- tive, Lord, 
@@ -100,9 +104,7 @@ sopWordsEight= \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-	
-		}
+   \include "insertchords.ly"
 	\new Lyrics = "aboveOne" { s4 }
     \context Staff = "upper" <<
 

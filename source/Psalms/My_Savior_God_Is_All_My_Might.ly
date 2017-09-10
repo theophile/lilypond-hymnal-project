@@ -97,6 +97,10 @@ bass = {
 	d2 a2. g4 c d a2 (a,) d1
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+
+}
+
 sopWords = \lyricmode
 {
 	My Sav -- ior God is all my light, Whom shall I fear be -- side Him?
@@ -149,9 +153,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-	
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

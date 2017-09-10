@@ -53,6 +53,10 @@ bass = {
 	d g g f f8 (ees) d (c) bes,4 f d g d ees c d2 g,4
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+
+}
+
 sopWords = \lyricmode
 {
 	The King of love my Shep -- herd is,
@@ -107,9 +111,7 @@ sopWordsEight= \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-	
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

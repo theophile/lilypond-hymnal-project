@@ -91,7 +91,9 @@ bass = \relative c,  {
     f1 | 
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
 
+}
 
 sopWords = \lyricmode
 {
@@ -145,9 +147,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-	
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

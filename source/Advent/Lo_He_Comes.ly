@@ -56,6 +56,10 @@ bass = {
 	fis4 cis d fis g fis e d fis d g fis8 (g) a4 a, d2
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+	
+}
+
 sopWords = \lyricmode
 {
         Lo! He comes with clouds de -- scend -- ing, once for our sal -- va -- tion slain; 
@@ -109,9 +113,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7" 
-		 
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

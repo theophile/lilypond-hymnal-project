@@ -52,6 +52,10 @@ bass = {
 	b,4 cis8 (dis) e4 dis cis e b, cis a, gis, fis, gis, a, b, <e e,>2
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+	
+}
+
 sopWords = \lyricmode
 {
         Hark! a thrill -- ing voice is sound -- ing;
@@ -109,10 +113,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7" 
-		%bes4 bes:/d bes ees c:m f:/a f:7 bes2 ees4:/g bes f d:m bes c f2
-		%bes4:/d f:7/c bes ees c:m7 bes:/d f bes bes:/d ees bes:/d g:m ees:6 f bes
-		}
+   \include "insertchords.ly
     \context Staff = "upper" <<
 
       \clef treble

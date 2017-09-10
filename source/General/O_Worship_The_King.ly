@@ -138,6 +138,10 @@ anthemBass = {
 	fes2. (ges2 bes,4) aes,2.
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+
+}
+
 skipThree = \repeat unfold 2 { \skip 8 }
 
 sopWords = \lyricmode
@@ -194,9 +198,7 @@ sopWordsSix = \lyricmode
 lyricsBlank = \lyricmode { \repeat unfold 43 { \skip 1 } \skip 1 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-	
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

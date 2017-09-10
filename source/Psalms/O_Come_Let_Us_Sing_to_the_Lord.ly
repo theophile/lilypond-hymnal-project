@@ -142,6 +142,10 @@ bass = {
 	s4 e e8 e dis4 e b, cis a, cis2 b, e1
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+
+}
+
 sopWords = \lyricmode
 {
 	\override StanzaNumber #'stencil = ##f
@@ -202,9 +206,7 @@ sopWordsEight= \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-	
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

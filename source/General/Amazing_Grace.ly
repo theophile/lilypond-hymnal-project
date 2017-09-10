@@ -49,6 +49,11 @@ bass = {
 	<g g,>4. aes,2. aes,4 (bes,8) c2. c4. des2. des4. aes2. g4. f2. f4. ees2. ees4. aes,2.~ aes,4. (ees2.)~ ees4. <aes, ees>2.^\fermata
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+	r4. aes2. r4. aes2.:7/c r4. des4.:sus2 des4. des4.:9 aes4 des8:/aes aes4. ees4. aes2. r4. bes2.:7sus2 bes4.:7/d ees2. bes4.:/f ees2.:7/g
+	ees4.:7/g aes2.:9 r4. aes2.:maj7/c ees4.:6/c des2. r4. aes4 des8:/aes aes4. c4.:m7/g f2.:m r4. aes2.:9/ees aes4.:9sus4/ees aes2. r4. des2.:/ees r4. aes2.:9 
+}
+
 sopWords = \lyricmode
 {
 	A -- ma -- zing Grace, how sweet the sound,
@@ -110,10 +115,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-		r4. aes2. r4. aes2.:7/c r4. des4.:sus2 des4. des4.:9 aes4 des8:/aes aes4. ees4. aes2. r4. bes2.:7sus2 bes4.:7/d ees2. bes4.:/f ees2.:7/g
-		ees4.:7/g aes2.:9 r4. aes2.:maj7/c ees4.:6/c des2. r4. aes4 des8:/aes aes4. c4.:m7/g f2.:m r4. aes2.:9/ees aes4.:9sus4/ees aes2. r4. des2.:/ees r4. aes2.:9 
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

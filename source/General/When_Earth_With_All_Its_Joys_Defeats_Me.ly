@@ -50,6 +50,10 @@ bass = {
 	d4 g f bes, d ees f bes, bes, c d ees8 (d) c4 d d g,
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+
+}
+
 sopWords = \lyricmode
 {
 	When earth with all its joys de -- feats me 
@@ -99,9 +103,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-		
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

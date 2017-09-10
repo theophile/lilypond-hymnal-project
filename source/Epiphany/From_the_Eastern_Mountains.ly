@@ -67,6 +67,10 @@ bass = {
 	g g a b c'2 c d4 d d d <g, g>1
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+
+}
+
 sopWords = \lyricmode
 {
         From the east -- ern moun -- tains, press -- ing on, they come,
@@ -131,12 +135,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7" 
-		%d4 b:m d:/fis g a:sus4 a d1 e4:m d:/fis g:6 a d2
-		%d4 b:m d:/fis g a:sus4 a d1 e4:m d:/fis g:6 a:7 d2
-		%a2 d4 fis:m d:6 e:7 a2 e:m b:m fis4:sus4 fis b2:m
-		%d2 g4 a b:m7 e:7/b a2 g4 d e:m d:/fis g:6 a d2
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

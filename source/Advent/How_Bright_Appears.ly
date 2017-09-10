@@ -147,6 +147,10 @@ bass = \relative c  {
     g4( a4) d2 |
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+	
+}
+
 sopWords = \lyricmode
 {
         How bright ap -- pears the Morn -- ing Star,
@@ -216,9 +220,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7" 
-		 
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

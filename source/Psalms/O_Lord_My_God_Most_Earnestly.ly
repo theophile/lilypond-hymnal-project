@@ -61,7 +61,12 @@ bass = {
 	g,4 g,2 g,4 bes,2 bes,4 g, <ees, ees>2 bes,4 bes, <ees, ees> <ees, ees> g, g, d2.
 }
 
-
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+	d1.:m d4:m/f ees4 c4:m/ees d1 s4 a4 d4 g4:m d2.
+	d1.:m d4:m/f ees4:maj7 c4:m/ees d1 s2 g2:m d2.
+	d2:m s8 g8:m7/d a4:dim/c bes2 f4 g2:m d2.:m g2:m g4:m/bes c4:m5.9 c4:m g2.:m
+	g2:m s8 d8:m/g g4:m bes2. g4:m ees2 bes2 ees4 c4:m/ees g4:m g4:m6+ d2.
+}
 
 sopWords = \lyricmode
 {
@@ -123,12 +128,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-		d1.:m d4:m/f ees4 c4:m/ees d1 s4 a4 d4 g4:m d2.
-		d1.:m d4:m/f ees4:maj7 c4:m/ees d1 s2 g2:m d2.
-		d2:m s8 g8:m7/d a4:dim/c bes2 f4 g2:m d2.:m g2:m g4:m/bes c4:m5.9 c4:m g2.:m
-		g2:m s8 d8:m/g g4:m bes2. g4:m ees2 bes2 ees4 c4:m/ees g4:m g4:m6+ d2.
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

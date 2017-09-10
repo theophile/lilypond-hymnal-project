@@ -81,6 +81,10 @@ bass = {
 	g c d4 e2 b,4 c1 g,
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+
+}
+
 sopWords = \lyricmode
 {
 	The \markup { \smallCaps "Lord" } hear thee in trou -- bled times, 
@@ -140,9 +144,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-	
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

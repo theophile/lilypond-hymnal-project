@@ -63,6 +63,10 @@ bass = {
 	f) e f2 g a4 (f) g2 d a, (d2.) c4 f1
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+
+}
+
 sopWords = \lyricmode
 {
         Hail to the Lord’s a -- noint -- ed, great Da -- vid’s great -- er Son!
@@ -124,9 +128,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-	
-		}
+   \include "insertchords.ly
     \context Staff = "upper" <<
 
       \clef treble

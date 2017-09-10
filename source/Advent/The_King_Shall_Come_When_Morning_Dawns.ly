@@ -45,6 +45,10 @@ bass = {
 	g4 g fis g d e a, d g, c e d d g,2.
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+
+}
+
 sopWords = \lyricmode
 {
         The King shall come when morn -- ing dawns 
@@ -102,12 +106,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-		%g2:m d4:m g4:m/bes c4:m6 d4 g2:m
-		%g2:m c4.:m g8:m f4 bes2.
-		%bes4 f4 bes4 ees4 c4:m g8:m/d d8 g2:m
-		%ees4 c4:m d4:m bes4 d8 g8:m/d d4 g2 
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

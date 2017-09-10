@@ -114,6 +114,10 @@ sixBass = {
 	g4. d8 c2 e b,4. d8 a,2 c b,4. c8 b,2 e4 (d) c4. g,8 c4 (d) g,2
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+ 
+}
+
 sopWords = \lyricmode
 {
 	\set stanza = "1. "
@@ -245,9 +249,7 @@ musicScore = <<
 \include "standard-layout.ly"
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-	
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

@@ -140,17 +140,13 @@ lower = {
 	<< { b,4 g, c a, b, c8 d e4 d c b, } \override Stem #'direction = #DOWN  \\ { g2 g g g g } \override Stem #'direction = #UP  >> a,4 b,8 c d4 d, g,1
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+	g4 g4/b e4:m/c d4:7 e2:m c4 g4:/b c4 g4:/b a4:m d4 g1 a2 d4:/b a4:/cis d2:sus2 d2 g4:/b d4:/fis b4:m/g a4:7 d1 
+	g4:/b c4 g4:/b a4:m7 g1 c4:/e d4:/fis g4 g4:/b d4 d4:/c g4:/b g4:7 c4 c4:/a g2:/b e2:m c4 g4:/b a4:m g4:/b d4:sus d4:7 g1
+}
+
 musicScore = <<
-	\new ChordNames \chordmode
-                {
-                \set majorSevenSymbol = "maj7"
-		  g4 g4/b e4:m/c d4:7 e2:m c4 g4:/b c4 g4:/b a4:m d4 g1 a2 d4:/b a4:/cis d2:sus2 d2 g4:/b d4:/fis b4:m/g a4:7 d1 
-		  g4:/b c4 g4:/b a4:m7 g1 c4:/e d4:/fis g4 g4:/b d4 d4:/c g4:/b g4:7 c4 c4:/a g2:/b e2:m c4 g4:/b a4:m g4:/b d4:sus d4:7 g1
-                  %g2:m d4:m g4:m/bes c4:m6 d4 g2:m
-                  %g2:m c4.:m g8:m f4 bes2.
-                  %bes4 f4 bes4 ees4 c4:m g8:m/d d8 g2:m
-                  %ees4 c4:m d4:m bes4 d8 g8:m/d d4 g2
-                }
+   \include "insertchords.ly"
     \new Voice = "mel" { \melody }
 	\new Lyrics = sopranos { s1 }
         \new Lyrics = sopranosTwo { s1 }

@@ -49,6 +49,10 @@ bass = {
 	d4 d cis d4. (e8 f4) b,4 c c f,2 s4 f4 bes, c cis2 (d4) g, a, a, <d, d>2. 
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+
+}
+
 sopWords = \lyricmode
 {
         This lit -- tle Babe __ so few days old,
@@ -111,12 +115,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-		%g2:m d4:m g4:m/bes c4:m6 d4 g2:m
-		%g2:m c4.:m g8:m f4 bes2.
-		%bes4 f4 bes4 ees4 c4:m g8:m/d d8 g2:m
-		%ees4 c4:m d4:m bes4 d8 g8:m/d d4 g2 
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

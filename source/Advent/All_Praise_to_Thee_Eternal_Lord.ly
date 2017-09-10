@@ -75,6 +75,11 @@ bass = \relative c' {
   c d g,1 
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+	g2 d:sus4 d e:m g:/b c d g g:/b a:m7 d:7/a g1 a2:m/g
+	d:/fis g g:/b a:m/c d g1 a2:m d:/fis g g:/b a:m/c d:7/a e:m g:/b c d g1
+ }
+
 sopWords = \lyricmode
 {
         All praise to Thee, E -- ter -- nal Lord,
@@ -133,10 +138,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-		g2 d:sus4 d e:m g:/b c d g g:/b a:m7 d:7/a g1 a2:m/g
-		d:/fis g g:/b a:m/c d g1 a2:m d:/fis g g:/b a:m/c d:7/a e:m g:/b c d g1
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

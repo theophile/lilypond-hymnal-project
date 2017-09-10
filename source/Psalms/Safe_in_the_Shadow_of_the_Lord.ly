@@ -61,6 +61,13 @@ bass = {
 	f2 d4 d e2 e a,1
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+	a1:m g1 c2 g4 a4:m e1 c2. c4:/e e2.:m/g r4 c1
+	c2 f4 e4:m/g a1:m f2 d2 g1 c2 d4:m c4:/e g4:7 f4:/a e2 a1:m
+	r2 c2 d4:m/f e4:m d4:m c4 g1 c1 e2:m/g a2:m e1
+	f2 d4 d4:m9 c2:aug/e e2 a1:m
+}
+
 dropLyrics =
 {
     \override LyricText #'extra-offset = #'(0 . -8)
@@ -150,18 +157,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-		a1:m g1 c2 g4 a4:m e1 c2. c4:/e e2.:m/g r4 c1
-		c2 f4 e4:m/g a1:m f2 d2 g1 c2 d4:m c4:/e g4:7 f4:/a e2 a1:m
-		r2 c2 d4:m/f e4:m d4:m c4 g1 c1 e2:m/g a2:m e1
-		f2 d4 d4:m9 c2:aug/e e2 a1:m
-		%r4 c2:m c2:m/ees c4:m g2. c2.:m r2 g4:/b c2:m g4:m c4:m d4:sus4 d4 g2.:m
-		 % r4 c2:m c2:m/ees c4:m g2. c2.:m r2 g4:/b c2:m g4:m c4:m d4:sus4 d4 g2.:m
-		  %ees2 c4:m ees2:/g aes4 bes2 ees4:/g f2.:m bes2. f2:m/aes f4:m c2:sus4 c4 f2.:m
-		  %c2.:m g2:m/bes g4:m aes2 ees4 bes2. c2:m/ees b4:dim/d c2:m g4:/b c2:m aes4 g2.
-		  %c2:m bes4:/d ees2 bes4 ees2 a4:dim/c bes2.
-		  %c2:m/ees g4:/b c2:m f4:m g4:sus4 g4:sus2 g4 c2.
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

@@ -92,6 +92,10 @@ bass = {
 	ees4 d2 e4 f c2 f,1.
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+
+}
+
 sopWords = \lyricmode
 {
         My heart has found a read -- y theme,
@@ -208,10 +212,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-		%f4 c:sus4 c f d:m/a bes c:/a f2 bes4:/d f bes g:m/bes a2.
-		%f2 bes4:/d c:/e a:m/c d:m c f2 c4 d:m g:m7/bes c f2.
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

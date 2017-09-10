@@ -59,6 +59,10 @@ bass = {
 	d4 d g, a, b, b, a,2 g,4 d e fis g a d2
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+
+}
+
 sopWords = \lyricmode
 {
         Songs of thank -- ful -- ness and praise,
@@ -136,9 +140,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-	
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

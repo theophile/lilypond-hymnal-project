@@ -108,6 +108,10 @@ bass = \relative a {
     c2. 
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+
+}
+
 sopWords = \lyricmode
 {
 	Be -- neath the blood -- stained lin --  tel, I with my chil -- dren stand, 
@@ -163,14 +167,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-		%r4 c2:m c2:m/ees c4:m g2. c2.:m r2 g4:/b c2:m g4:m c4:m d4:sus4 d4 g2.:m
-		 % r4 c2:m c2:m/ees c4:m g2. c2.:m r2 g4:/b c2:m g4:m c4:m d4:sus4 d4 g2.:m
-		  %ees2 c4:m ees2:/g aes4 bes2 ees4:/g f2.:m bes2. f2:m/aes f4:m c2:sus4 c4 f2.:m
-		  %c2.:m g2:m/bes g4:m aes2 ees4 bes2. c2:m/ees b4:dim/d c2:m g4:/b c2:m aes4 g2.
-		  %c2:m bes4:/d ees2 bes4 ees2 a4:dim/c bes2.
-		  %c2:m/ees g4:/b c2:m f4:m g4:sus4 g4:sus2 g4 c2.
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

@@ -59,6 +59,10 @@ bass = {
 	c2 c' b g e c b,1 g4 (a) g (fis) e2 g,4 (a,) b,2 b, e1
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+
+}
+
 skipFour = \repeat unfold 4 { \skip 8 }
 
 sopWords = \lyricmode
@@ -114,9 +118,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-		 
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

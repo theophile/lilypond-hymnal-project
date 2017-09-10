@@ -53,6 +53,10 @@ bass = {
 	c4 a, g, f,4. g,8 a,4 bes, c c f1
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+
+}
+
 sopWords = \lyricmode
 {
         Love of the Fa -- ther, Love of God the Son,
@@ -111,9 +115,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-	
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

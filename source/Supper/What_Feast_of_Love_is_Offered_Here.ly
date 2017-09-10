@@ -58,6 +58,10 @@ b4. g4 g8 d4 d8 d4 dis8 e4 e8 c4 c8 b,4 (b,8) b,4.
 b4. g4 g8 d4 d8 d4 dis8 e4 a,8 b,4 b,8 e4. e4 s8
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+
+}
+
 sopWords = \lyricmode
 {
 What feast of love is of -- fered here, what ban -- quet come from heav -- en?
@@ -108,9 +112,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-	
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble

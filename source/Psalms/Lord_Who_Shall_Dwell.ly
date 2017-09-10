@@ -67,6 +67,10 @@ bass = {
 	d a,4 e a,2 d4 g,2 (c4 f,2 bes,4 g,2 d4) a,2 d1
 }
 
+thechords = \chordmode  { \set majorSevenSymbol = "maj7"
+
+}
+
 sopWords = \lyricmode
 {
 	\markup { \smallCaps "Lord," } who shall dwell with -- in Your house?
@@ -114,9 +118,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \new ChordNames \chordmode { \set majorSevenSymbol = "maj7"
-	
-		}
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble
