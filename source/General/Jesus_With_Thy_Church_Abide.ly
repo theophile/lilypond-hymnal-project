@@ -23,21 +23,22 @@ global = {
 	\time 4/4
 	\key g \minor		
 	\tempo 4=96
+	\autoBeamOff
 }
 
 soprano = {	
-	g'4 g' f' bes' a'8 (g') a'4 g'2 g'4 bes' c''4. bes'8 c''4 d'' bes'2 \break
-	bes'4 c'' d'' bes' c'' bes'8 (a') g'2 g'4 g' f' bes' a'8 (g' a'4) g'2 \bar "|." 
+	g'4 g' f' bes' a'8 [g'] a'4 g'2 g'4 bes' c''4. bes'8 c''4 d'' bes'2 \break
+	bes'4 c'' d'' bes' c'' bes'8 [a'] g'2 g'4 g' f' bes' a'8 ([g'] a'4) g'2 \bar "|." 
 }
 
 alto = {
-	d'4 d' d' d' ees'8 (g') fis'4 g'2 d'4 d' ees'4. d'8 f'4 f' f'2 \break
-	d'4 f' f' g' g' g'8 (fis') g'2 ees'4 ees' d' f' fis'8 (g' fis'4) g'2 \bar "|."
+	d'4 d' d' d' ees'8 [g'] fis'4 g'2 d'4 d' ees'4. d'8 f'4 f' f'2 \break
+	d'4 f' f' g' g' g'8 [fis'] g'2 ees'4 ees' d' f' fis'8 ([g'] fis'4) g'2 \bar "|."
 }
 
 tenor = {
-	bes4 bes a d' c'8 (bes) a4 bes2 bes4 bes g4. bes8 a4 bes d'2 \break
-	f4 a bes bes ees' d' bes2 bes4 c' a d' d'8 (bes a4) b2 \bar "|."
+	bes4 bes a d' c'8 [bes] a4 bes2 bes4 bes g4. bes8 a4 bes d'2 \break
+	f4 a bes bes ees' d' bes2 bes4 c' a d' d'8 ([bes] a4) b2 \bar "|."
 }
 
 bass = {
