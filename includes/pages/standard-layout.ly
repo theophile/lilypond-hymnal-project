@@ -10,7 +10,7 @@
     		\context { \ChordNames \override ChordName #'font-size = #-1 }
     		\context { \ChordNames \override ChordName #'font-family = #'Times }
 		\context { \StaffGroup \remove "Span_bar_engraver" }
-		\context { \Score barNumberVisibility = #(lambda (barnum) #f) }
+	    \context { \Score \omit BarNumber }
 		\context { \Score \override VerticalAxisGroup #'remove-first = ##t }
 		}
 	 }

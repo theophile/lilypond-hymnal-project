@@ -14,7 +14,7 @@
     		\context { \ChordNames \override ChordName #'font-family = #'Times }
 		\context { \ChordNames \override ChordName #'stencil = ##f }
 		\context { \StaffGroup \remove "Span_bar_engraver" }
-		\context { \Score barNumberVisibility = #(lambda (barnum) #f) }
+		\context { \Score \omit BarNumber }
 		\context { \Score \override MetronomeMark #'stencil = ##f }
 		
 		}
