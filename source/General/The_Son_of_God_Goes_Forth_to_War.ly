@@ -17,44 +17,45 @@ Meter = "CMD"
 \include "header.ly"
 
 global = {
-	\override Staff.TimeSignature #'style = #'()
+	\override Staff.TimeSignature #'style = #'[]
 	\override Rest #'direction = #'0
 	\override MultiMeasureRest #'staff-position = #0
 	\time 6/8
-	\key e \minor		
+	\key e \minor
+	\autoBeamOff	
 }
 
 soprano = {	
-	\tempo 4. = 44
+	\tempo 4. = 54
 				\partial 8
-				e'8 b4 e'8 e'4 e'16 (fis') g'8. (fis'16) e'8 d'4 b8 e'4. b'4. a'8. (g'16) fis'8 e'4 \bar "" \break
-				e'8 b4 e'8 e'4 e'16 (fis') g'8. (fis'16) e'8 d'4 b8 e'4. g'4. a'8. (g'16) a'8 b'4. \break
-				<e'' c''>4. <d'' b'>4 b'8 b'8. (a'16) g'8 a'4 g'16 (a') b'4 e''8 d''8. (c''16) b'8 a'4 g'8 e'4 \bar "" \break
-				e'8 e''4 e''8 e''4 e''8 d''8. (c''16) b'8 a'4 g'16 (a') b'8. (a'16) g'8 a'8 fis'4 e'4.~ e'4 \bar "|."
+				e'8 b4 e'8 e'4 e'16 [fis'] g'8. [fis'16] e'8 d'4 b8 e'4. b'4. a'8. [g'16] fis'8 e'4 \bar "" \break
+				e'8 b4 e'8 e'4 e'16 [fis'] g'8. [fis'16] e'8 d'4 b8 e'4. g'4. a'8. [g'16] a'8 b'4. \break
+				<e'' c''>4. <d'' b'>4 b'8 b'8. [a'16] g'8 a'4 g'16 [a'] b'4 e''8 d''8. [c''16] b'8 a'4 g'8 e'4 \bar "" \break
+				e'8 e''4 e''8 e''4 e''8 d''8. [c''16] b'8 a'4 g'16 [a'] b'8. [a'16] g'8 a'8 fis'4 e'4.~ e'4 \bar "|."
 }
 
 alto = {
 	\partial 8
-				e'8 b4 e'8 e'4 c'16 (d') e'8. (d'16) c'8 a4 b8 b4. e' fis'8. (e'16) d'8 b4 \bar "" \break
-				b8 b4 b8 b4 c'16 (d') e'8. (d'16) c'8 a4 b8 b4. e'4. fis'8. (e'16) fis'8 <g' e'>4. \break
-				g'4. g'4 g'8 g'8. (fis'16) e'8 fis'4 e'16 (fis') e'4 g'8 fis'4 g'8 fis'4 d'8 c'4 \bar "" \break
-				c'8 c''4 b'8 a'4 a'8 b'8. (a'16) g'8 fis'4 g'16 (fis') e'8. (fis'16) e'8 fis' d'4 b4.~ b4
+				e'8 b4 e'8 e'4 c'16 [d'] e'8. [d'16] c'8 a4 b8 b4. e' fis'8. [e'16] d'8 b4 \bar "" \break
+				b8 b4 b8 b4 c'16 [d'] e'8. [d'16] c'8 a4 b8 b4. e'4. fis'8. [e'16] fis'8 <g' e'>4. \break
+				g'4. g'4 g'8 g'8. [fis'16] e'8 fis'4 e'16 [fis'] e'4 g'8 fis'4 g'8 fis'4 d'8 c'4 \bar "" \break
+				c'8 c''4 b'8 a'4 a'8 b'8. [a'16] g'8 fis'4 g'16 [fis'] e'8. [fis'16] e'8 fis' d'4 b4.~ b4
 }
 
 tenor = {
 	\partial 8
-				e8 b,4 e8 e4 a8 g8 (a) g fis4 fis8 g4. g a8 (b) a g4
-				a8 g4 a8 g4 a8 g (a) g fis4 fis8 g4. g a4 d'8 b4.
+				e8 b,4 e8 e4 a8 g8 [a] g fis4 fis8 g4. g a8 [b] a g4
+				a8 g4 a8 g4 a8 g [a] g fis4 fis8 g4. g a4 d'8 b4.
 				c'4. d'4 d'8 <e' b>4 b8 <d' a>4 <d' a>8 g4 g8 a4 b8 d'4 b8 c'4
-				b8 c' (d') e'8 d'4 d'8 d'4 e'8 d'4 d'8 e'4 b8 d'8 a4 g4.~ g4
+				b8 c' [d'] e'8 d'4 d'8 d'4 e'8 d'4 d'8 e'4 b8 d'8 a4 g4.~ g4
 }
 
 bass = {
 	\partial 8
 				e8 b,4 e8 e4 d8 c4 c8 d4 d8 e4 (d8) c4. d4 d8 e4
-				fis8 e4 fis8 e4 d8 c4 c8 d4 d8 e4 (d8) c4. d8 (e) fis e4 (g8)
-				c'8 (b a) g4 fis8 e8 (fis) g fis (e) d c4 c8 d4 e8 fis4 fis8 g4
-				g8 a4 g8 fis4 fis8 g4 g8 a4 a8 g8 (fis) e d d4 e4.~ e4
+				fis8 e4 fis8 e4 d8 c4 c8 d4 d8 e4 (d8) c4. d8 [e] fis e4 (g8)
+				c'8 [b a] g4 fis8 e8 [fis] g fis [e] d c4 c8 d4 e8 fis4 fis8 g4
+				g8 a4 g8 fis4 fis8 g4 g8 a4 a8 g8 [fis] e d d4 e4.~ e4
 }
 
 thechords = \chordmode  { \set majorSevenSymbol = "maj7"
