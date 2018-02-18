@@ -27,32 +27,33 @@ global = {
 	\override MultiMeasureRest #'staff-position = #0
 	\time 4/4
 	\key f \major
-	\tempo 4 = 100	
+	\tempo 4 = 100
+	\autoBeamOff
 }
 
 soprano = {	
 	\partial 4
-	c'4 f' g' a' bes' c''4. bes'8 a'4 d'' c'' bes' a' bes'8 (a') g'2 f'4
-	c'4 f' g' a' bes' c''4. bes'8 a'4 d'' c'' bes' a' bes'8 (a') g'2 f'4 
-	c''4 d'' d'' g' g' c'' c'' f' a' g' f' e' f'8 (e') d'4 d' c' c'' d'' c'' bes' a' g' g' f' \bar "|."
+	c'4 f' g' a' bes' c''4. bes'8 a'4 d'' c'' bes' a' bes'8 [a'] g'2 f'4 \bar ""
+	c'4 f' g' a' bes' c''4. bes'8 a'4 d'' c'' bes' a' bes'8 [a'] g'2 f'4 \bar ""
+	c''4 d'' d'' g' g' c'' c'' f' a' g' f' e' f'8 [e'] d'4 d' c' \bar "" c'' d'' c'' bes' a' g' g' f' \bar "|."
 }
 
 alto = {
-	c'4 d' e' f' f' e' g' f' f' f' f'8 (e') f'4 f' f' (e') c'
-	c'4 d' e' f' f' e' g' f' f' f' f'8 (e') f'4 f' f' (e') c'
-	f' f' g'8 (f') e'4 e' e' f'8 (ees') d'4 c' c' c'8 (b) c'4 c' c' b c' f' f' e' d' c'8 (f') f'4 e' f'
+	c'4 d' e' f' f' e' g' f' f' f' f'8 [e'] f'4 f' f' (e') c'
+	c'4 d' e' f' f' e' g' f' f' f' f'8 [e'] f'4 f' f' (e') c'
+	f' f' g'8 [f'] e'4 e' e' f'8 [ees'] d'4 c' c' c'8 [b] c'4 c' c' b c' f' f' e' d' c'8 [f'] f'4 e' f'
 }
 
 tenor = {
-	a4 a c' c' bes g c' c' bes a bes c' bes8 (c') d'4 (c') a
-	a4 a c' c' bes g c' c' bes a bes c' bes8 (c') d'4 (c') a
-	a bes g g g a f f f e f g f8 (g) a4 g8 (f) e4 c' bes g f8 (g) a (bes) c'4. bes8 a4
+	a4 a c' c' bes g c' c' bes a bes c' bes8 [c'] d'4 (c') a
+	a4 a c' c' bes g c' c' bes a bes c' bes8 [c'] d'4 (c') a
+	a bes g g g a f f f e f g f8 [g] a4 g8 [f] e4 c' bes g f8 [g] a [bes] c'4. bes8 a4
 }
 
 bass = {
-	f4 d c f d c e f bes f g f8 (e) d (c) bes,4 (c) f
-	f4 d c f d c e f bes f g f8 (e) d (c) bes,4 (c) f
-	f bes, b, c c8 (bes,) a,4 a, bes, f, c d c8 (b,) a, (g,) f,4 g, c a, bes, c d8 (e) f4 c c f,
+	f4 d c f d c e f bes f g f8 [e] d [c] bes,4 (c) f
+	f4 d c f d c e f bes f g f8 [e] d [c] bes,4 (c) f
+	f bes, b, c c8 [bes,] a,4 a, bes, f, c d c8 [b,] a, [g,] f,4 g, c a, bes, c d8 [e] f4 c c f,
 }
 
 thechords = \chordmode  { \set majorSevenSymbol = "maj7"
