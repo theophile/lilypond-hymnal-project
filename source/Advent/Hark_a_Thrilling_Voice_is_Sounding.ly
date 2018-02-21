@@ -29,7 +29,7 @@ global = {
 	\time 4/4
 	\key ees \major
 	\tempo 4 = 96
-	
+	\autoBeamOff
 }
 
 soprano = {	
@@ -38,18 +38,18 @@ soprano = {
 }
 
 alto = {
-	b4 b b dis' e' e' e' e' e' e' dis' fis' gis' fis'8 (e') dis'2
-	dis'4 e'8 (fis') e'4 fis' e' e' dis' e' cis' eis' fis' e' e' dis' e'2
+	b4 b b dis' e' e' e' e' e' e' dis' fis' gis' fis'8 [e'] dis'2
+	dis'4 e'8 [fis'] e'4 fis' e' e' dis' e' cis' eis' fis' e' e' dis' e'2
 }
 
 tenor = {
 	gis4 b fis fis e a a gis b e fis b b ais b2
-	dis'4 cis'8 (b) b4 b cis' b b8 (a) gis4 a b cis' b cis' b8 (a) gis2
+	dis'4 cis'8 [b] b4 b cis' b b8 [a] gis4 a b cis' b cis' b8 [a] gis2
 }
 
 bass = {
-	e4 e dis b, cis a,8 (b,) cis (dis) e4 e cis b, dis e fis b,2
-	b,4 cis8 (dis) e4 dis cis e b, cis a, gis, fis, gis, a, b, <e e,>2
+	e4 e dis b, cis a,8 [b,] cis [dis] e4 e cis b, dis e fis b,2
+	b,4 cis8 [dis] e4 dis cis e b, cis a, gis, fis, gis, a, b, <e e,>2
 }
 
 thechords = \chordmode  { \set majorSevenSymbol = "maj7"
@@ -113,7 +113,7 @@ sopWordsEight = \lyricmode
 }
 
 musicScore = \context StaffGroup <<
-   \include "insertchords.ly
+   \include "insertchords.ly"
     \context Staff = "upper" <<
 
       \clef treble
