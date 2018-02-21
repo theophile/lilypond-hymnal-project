@@ -28,12 +28,13 @@ global = {
 	\time 4/4
 	\key f \minor
 	\tempo 4 = 96
+	\autoBeamOff
 }
 
 soprano = {	
 	\partial 2
-	d''2 bes'4 d'' c'' bes' a'2. d''4 bes' g' fis' d'8 (fis') g'2. 
-	\oneVoice r4 r1 r2 r4 \voiceOne r4 r2 r4 bes'4 d'' d'' d'' f'' d'' c''8 (bes') a'4 a' bes' g' fis' fis' g'1  \bar "|."
+	d''2 bes'4 d'' c'' bes' a'2. d''4 bes' g' fis' d'8 [fis'] g'2. 
+	\oneVoice r4 r1 r2 r4 \voiceOne r4 r2 r4 bes'4 d'' d'' d'' f'' d'' c''8 [bes'] a'4 a' bes' g' fis' fis' g'1  \bar "|."
 }
 
 alto = {
@@ -42,13 +43,13 @@ alto = {
 }
 
 tenor = {
-	g2 g4 bes a g d'2. fis'4 d' c'8 (bes) a4 g8 (fis) g2.
-	r4 r2 r4 bes4 c' c' c' f'4 d' d' d' bes a g bes c' d'2. d'4 d' c'8 (bes) a4 g8 (fis) g1
+	g2 g4 bes a g d'2. fis'4 d' c'8 [bes] a4 g8 [fis] g2.
+	r4 r2 r4 bes4 c' c' c' f'4 d' d' d' bes a g bes c' d'2. d'4 d' c'8 [bes] a4 g8 [fis] g1
 }
 
 bass = {
 	g2 g4 g fis g d2. d4 bes, c d d g,2.
-	g,4 d d d bes, f f f d g g g bes8 (g) fis4 d d2~ d2. d4 bes, c d d g,1
+	g,4 d d d bes, f f f d g g g bes8 [g] fis4 d d2~ d2. d4 bes, c d d g,1
 }
 
 thechords = \chordmode  { \set majorSevenSymbol = "maj7"
@@ -161,7 +162,7 @@ musicScore = \context StaffGroup <<
  \vspace #1
 }
 
-\markup { \hspace #42 
+\markup { \vspace #2 \hspace #42 
  \columns  { 
   \column { \line {
      "4. "
